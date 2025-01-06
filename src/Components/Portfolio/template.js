@@ -23,7 +23,12 @@ const Template = ({ work }) => {
     <div>
       <Card
         sx={{
-          height: 420,
+          height: {
+            sm: 420,
+            md: 380,
+            lg: 400,
+            xl: 380,
+          },
           padding: 2,
           backgroundColor: "#111333",
           borderRadius: 4,
@@ -37,8 +42,11 @@ const Template = ({ work }) => {
             component="img"
             image={work.image}
             alt="image"
-            height={200}
-            sx={{ objectFit: "fill" }}
+            sx={{
+              objectFit: work.objectFit ? work.objectFit : "fill",
+              borderRadius: 4,
+              height: 200,
+            }}
             onClick={handleClickOpen}
           />
           <CardContent sx={{ color: "white", textAlign: "center" }}>
@@ -49,7 +57,12 @@ const Template = ({ work }) => {
         </CardActionArea>
         <CardActions>
           <Button
-            sx={{ margin: "auto", color: "white", borderColor: "white" }}
+            sx={{
+              margin: "auto",
+              color: "white",
+              borderColor: "white",
+              borderRadius: 2,
+            }}
             variant="outlined"
             onClick={() => router.push(work.url)}
           >
