@@ -1,98 +1,56 @@
-import { useState } from "react";
-import { Stack, Box, Divider, ButtonBase, Typography, Dialog } from "@mui/material";
+import { Stack, Box, Typography } from "@mui/material";
+import Link from "next/link";
 
-//Components
-import Privacy from "./BottomFooter/Privacy";
-import Terms from "./BottomFooter/Terms";
+//Icons
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import EmailIcon from "@mui/icons-material/Email";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 //Styles
 import styles from "Styles/Footer/BottomFooter.styles";
 
 const BottomFooter = () => {
-    const [open, setOpen] = useState(false);
-    const handleClickOpen = (name) => () => {
-        setOpen(name);
-        const header = document.querySelector('header');
-        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-        header.style.paddingRight = `${scrollBarWidth}px`;
-    };
-    const handleClose = () => {
-        setOpen(false);
-    };
-    const RemovePadding = () => {
-        const header = document.querySelector('header');
-        header.style.paddingRight = "0px";
-    }
-    return (
-        <Box>
-            <Divider sx={styles.Divider} />
-            <Box sx={{ display: { smd: "block", xxs: "none" } }}>
-                <Stack direction="row" sx={{ alignItems: "center" }}>
-                    <Typography variant="body1" component="p" sx={styles.Copyright}>
-                        © {new Date().getFullYear()} Code Station 21. All Rights Reserved.
-                    </Typography>
-                    <Stack direction="row" sx={styles.Terms}>
-                        <ButtonBase>
-                            Purchase
-                        </ButtonBase>
-                        <ButtonBase onClick={handleClickOpen('privacy')}>
-                            Privacy Policy
-                        </ButtonBase>
-                        <ButtonBase onClick={handleClickOpen('terms')}>
-                            Terms of Service
-                        </ButtonBase>
-                    </Stack>
-                </Stack>
-            </Box>
-            <Box sx={{ display: { smd: "none", xxs: "block" }, mb: "20px" }}>
-                <Stack sx={{ alignItems: "center", mb: { sm: "0px", xxs: "20px" } }}>
-                    <Stack direction="row" sx={styles.Terms}>
-                        <ButtonBase>
-                            Purchase
-                        </ButtonBase>
-                        <ButtonBase onClick={handleClickOpen('privacy')}>
-                            Privacy Policy
-                        </ButtonBase>
-                        <ButtonBase onClick={handleClickOpen('terms')}>
-                            Terms of Service
-                        </ButtonBase>
-                    </Stack>
-                    <Typography variant="body1" component="p" sx={styles.Copyright}>
-                        © {new Date().getFullYear()} Code Station 21. All Rights Reserved.
-                    </Typography>
-                </Stack>
-            </Box>
-            <Dialog
-                open={open === 'privacy'}
-                onClose={handleClose}
-                scroll="paper"
-                maxWidth="md"
-                TransitionProps={{
-                    onExited: () => {
-                        RemovePadding();
-                    }
-                }}
-            >
-                <Privacy
-                    handleClose={handleClose}
-                />
-            </Dialog>
-            <Dialog
-                open={open === 'terms'}
-                onClose={handleClose}
-                scroll="paper"
-                maxWidth="md"
-                TransitionProps={{
-                    onExited: () => {
-                        RemovePadding();
-                    }
-                }}
-            >
-                <Terms
-                    handleClose={handleClose}
-                />
-            </Dialog>
-        </Box>
-    );
+  return (
+    <Stack direction="row">
+      <Typography variant="body1" component="p" sx={styles.Copyright}>
+        © {new Date().getFullYear()} Fusion Softworks. All Rights Reserved.
+      </Typography>
+      <Box>
+        <Stack direction="row" sx={styles.Location}>
+          <LocationOnIcon style={{ fontSize: "32px" }} />
+          <Box>
+            <Typography variant="body1" component="p">
+              171/5, Borhanpur Lane, 6 Hazaribagh Road, Dhaka 1211
+            </Typography>
+          </Box>
+        </Stack>
+        <Stack direction="row" sx={styles.Address}>
+          <Box>
+            <Link href="mailto:fusionsoftworks@gmail.com">
+              <a>
+                <EmailIcon style={{ fontSize: "32" }} />
+              </a>
+            </Link>
+          </Box>
+          <Box>
+            <Link href="tel:+50253720248">
+              <a>
+                <WhatsAppIcon style={{ fontSize: "32" }} />
+              </a>
+            </Link>
+          </Box>
+          <Box>
+            <Link href="https://t.me/miracle_guy">
+              <a>
+                <TelegramIcon style={{ fontSize: "32" }} />
+              </a>
+            </Link>
+          </Box>
+        </Stack>
+      </Box>
+    </Stack>
+  );
 };
+
 export default BottomFooter;

@@ -1,105 +1,57 @@
-import { useState } from 'react';
-import { Box, Typography, InputBase, ButtonBase, CircularProgress } from "@mui/material";
-import { useForm } from 'react-hook-form';
-import emailjs from '@emailjs/browser';
+import { Box, Grid, Typography } from "@mui/material";
 
-//Icon
-import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
-import ErrorIcon from '@mui/icons-material/Error';
-import DoneIcon from '@mui/icons-material/Done';
-import CloseIcon from '@mui/icons-material/Close';
+//Images
+import Member1 from "Assets/footer/member-1.jpg";
+import Member2 from "Assets/footer/member-2.png";
+import Member3 from "Assets/footer/member-3.jpg";
+import Member4 from "Assets/footer/member-4.png";
 
 //Styles
-import styles from "Styles/Footer/FooterThree.styles"
+import styles from "Styles/Footer/FooterFour.styles";
 
-const FooterThree = () => {
-    const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState('');
-    const [success, setSuccess] = useState(false);
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-        reset
-    } = useForm();
-    const onSubmit = (data, e) => {
-        setLoading(true);
-        emailjs.sendForm('service_p6xyx8c', 'template_50go8lq', e.target, 'user_a3mibtvU72r4yERjbA9dj')
-            .then((result) => {
-                setLoading(false);
-                setSuccess(true);
-                setMessage('Email received! We will contact you soon.');
-                reset();
-            }, (error) => {
-                setLoading(false);
-                setSuccess(false);
-                setMessage('Something went wrong. Try again!');
-            });
-    }
-    return (
-        <Box>
-            <Typography variant="h6" component="h6" sx={styles.Title}>
-                Newsletters
-            </Typography>
-            <Typography variant="body1" component="p" sx={styles.Description}>
-                Let&apos;s be friends and get interesting news about us
-            </Typography>
-            <Box component="form" onSubmit={handleSubmit(onSubmit)}>
-                <InputBase
-                    placeholder="Write Email"
-                    sx={styles.InputField}
-                    {...register(
-                        'email',
-                        {
-                            required: 'Please enter an email addreess!',
-                            pattern: {
-                                value: /\S+@\S+\.\S+/,
-                                message: 'The email you enter is invalid email!',
-                            },
-                        },
-                        { required: true }
-                    )}
-                />
-                {errors.email && (
-                    <Typography variant='body1' component='p' sx={styles.ErrorMessage}>
-                        <ErrorIcon />{errors.email.message}
-                    </Typography>
-                )}
-                <ButtonBase
-                    type="submit"
-                    sx={{
-                        ...styles.SubmitButton,
-                        backgroundColor: `${success ? "primary.success" : "primary.main"}`
-                    }}
-                >
-                    {!loading && !message &&
-                        <>
-                            Subscribe
-                            <ArrowForwardTwoToneIcon />
-                        </>
-                    }
-                    {loading &&
-                        <Box sx={{ display: 'flex' }}>
-                            <CircularProgress sx={{ color: "background.default" }} size={22} />
-                        </Box>
-                    }
-                    {message && !loading &&
-                        <>
-                            {success &&
-                                <Box>
-                                    <DoneIcon sx={{ fontSize: "35px" }} />
-                                </Box>
-                            }
-                            {!success &&
-                                <Box>
-                                    <CloseIcon sx={{ fontSize: "35px" }} />
-                                </Box>
-                            }
-                        </>
-                    }
-                </ButtonBase>
-            </Box>
-        </Box>
-    );
+const FooterFour = () => {
+  return (
+    <Box>
+      <Typography variant="h6" component="h6" sx={styles.Title}>
+        Our Members
+      </Typography>
+      <Box>
+        <Grid container spacing={2}>
+          <Grid item xxs={6}>
+            <Box
+              component="img"
+              src={Member1}
+              sx={styles.Image}
+              alt="Gallery"
+            />
+          </Grid>
+          <Grid item xxs={6}>
+            <Box
+              component="img"
+              src={Member2}
+              sx={styles.Image}
+              alt="Gallery"
+            />
+          </Grid>
+          <Grid item xxs={6}>
+            <Box
+              component="img"
+              src={Member3}
+              sx={styles.Image}
+              alt="Gallery"
+            />
+          </Grid>
+          <Grid item xxs={6}>
+            <Box
+              component="img"
+              src={Member4}
+              sx={styles.Image}
+              alt="Gallery"
+            />
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
+  );
 };
-export default FooterThree;
+export default FooterFour;

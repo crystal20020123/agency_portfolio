@@ -7,9 +7,29 @@ import Logos from "Assets/header/logo.png";
 
 const Logo = () => {
   return (
-    <Box sx={{ mt: "2px", a: { cursor: "pointer" } }}>
+    <Box
+      sx={{
+        mt: "2px",
+        a: {
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          gap: "4px",
+        },
+      }}
+    >
       <Link to="home" spy={true} smooth={true} duration={500}>
-        <Image src={Logos} width={200} height={30} alt="Logo" />
+        <Image src={Logos} width={60} height={40} alt="Logo" />
+        <Box
+          sx={{
+            display: {
+              sm: "none",
+              md: "block",
+            },
+          }}
+        >
+          <p style={{ fontSize: "28px", fontWeight: 700 }}>Fusion Softworks</p>
+        </Box>
       </Link>
     </Box>
   );

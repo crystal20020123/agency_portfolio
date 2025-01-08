@@ -1,46 +1,42 @@
 const styles = {
-    Divider: {
-        backgroundColor: "primary.divider",
-        mt: "2em"
+  Location: {
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+  },
+  Address: {
+    mt: "15px",
+    gap: "20px",
+    alignItems: "center",
+    svg: {
+      fontSize: "30px",
+      mr: "5px",
     },
-    Terms: {
-        button: {
-            mx: "2px",
-            px: "8px",
-            fontSize: "15px",
-            fontWeight: 500,
-            position: "relative",
-            py: "21px",
-            transition: "0.2s ease",
-            "&:after": {
-                content: '""',
-                backgroundColor: "primary.main",
-                position: "absolute",
-                top: "-1px",
-                height: "2px",
-                left: "6px",
-                right: "10px",
-                visibility: "hidden",
-                opacity: 0,
-                transition: "0.2s ease"
-            },
-            "&:hover": {
-                color: "primary.main",
-                "&:after": {
-                    visibility: "visible",
-                    opacity: 1
-                }
-            }
-        }
+    "& p": {
+      fontSize: "15px",
+      fontWeight: 500,
     },
-    Copyright: {
-        flex: 1,
+    a: {
+      textDecoration: "none",
+      color: "text.primary",
+      transition: "0.2s ease",
+      "& p": {
+        fontSize: "15px",
         fontWeight: 500,
-        textAlign: {
-            sm: "unset",
-            xxs: "center"
-        }
-    }
+      },
+      "&:hover": {
+        color: "primary.main",
+      },
+    },
+  },
+  Copyright: {
+    flex: 1,
+    fontWeight: 500,
+    textAlign: {
+      sm: "unset",
+      xxs: "center",
+    },
+  },
 };
 
 export default styles;

@@ -5,15 +5,10 @@ import { Link as Scroll } from "react-scroll";
 
 //Icons
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import {
-  MapIcon,
-  EmailIcon,
-  PhoneIcon,
-  FacebookIcon,
-  TwitterIcon,
-  BehaceIcon,
-} from "Utilis/Icons";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import EmailIcon from "@mui/icons-material/Email";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 //Logo
 import Logo from "Assets/header/logo.png";
@@ -29,7 +24,7 @@ const Drawers = ({ toggleDrawer }) => {
     <Box>
       <Stack direction="row" sx={{ alignItems: "center" }}>
         <Box sx={{ flex: 1, mt: "5px" }}>
-          <Image src={Logo} width={200} height={30} alt="Logo" />
+          <Image src={Logo} width={60} height={40} alt="Logo" />
         </Box>
         <ButtonBase onClick={toggleDrawer(false)} sx={styles.CrossButton}>
           <CloseRoundedIcon />
@@ -64,7 +59,7 @@ const Drawers = ({ toggleDrawer }) => {
       </Box>
       <Stack direction="row" sx={styles.Address}>
         <Box>
-          <MapIcon />
+          <LocationOnIcon style={{ fontSize: "36px" }} />
         </Box>
         <Box>
           <Typography variant="body1" component="p">
@@ -72,63 +67,29 @@ const Drawers = ({ toggleDrawer }) => {
           </Typography>
         </Box>
       </Stack>
+
       <Stack direction="row" sx={styles.Address}>
         <Box>
-          <EmailIcon />
-        </Box>
-        <Box>
-          <Link href="mailto:info@codestation21.com">
+          <Link href="mailto:fusionsoftworks@gmail.com">
             <a>
-              <Typography variant="body1" component="p">
-                info@codestation21.com
-              </Typography>
+              <EmailIcon style={{ fontSize: "36px" }} />
             </a>
           </Link>
         </Box>
-      </Stack>
-      <Stack direction="row" sx={styles.Address}>
         <Box>
-          <PhoneIcon />
-        </Box>
-        <Box>
-          <Link href="tel:+8801552938771">
+          <Link href="tel:+50253720248">
             <a>
-              <Typography variant="body1" component="p">
-                +880 1552-938771
-              </Typography>
+              <WhatsAppIcon style={{ fontSize: "36px" }} />
             </a>
           </Link>
         </Box>
-      </Stack>
-      <Stack direction="row" sx={styles.Social}>
-        <Link href="https://github.com/codestation21">
-          <a target="_blank">
-            <ButtonBase>
-              <GitHubIcon />
-            </ButtonBase>
-          </a>
-        </Link>
-        <Link href="https://www.facebook.com/codestation21">
-          <a target="_blank">
-            <ButtonBase>
-              <FacebookIcon />
-            </ButtonBase>
-          </a>
-        </Link>
-        <Link href="https://twitter.com/codestation21">
-          <a target="_blank">
-            <ButtonBase>
-              <TwitterIcon />
-            </ButtonBase>
-          </a>
-        </Link>
-        <Link href="https://behance.com/codestation21">
-          <a target="_blank">
-            <ButtonBase>
-              <BehaceIcon />
-            </ButtonBase>
-          </a>
-        </Link>
+        <Box>
+          <Link href="https://t.me/miracle_guy">
+            <a>
+              <TelegramIcon style={{ fontSize: "36px" }} />
+            </a>
+          </Link>
+        </Box>
       </Stack>
     </Box>
   );
