@@ -1,5 +1,5 @@
 import Client1 from "Assets/review/1.jpg";
-import Client2 from "Assets/review/2.png";
+import Client2 from "Assets/review/2.jpg";
 import Client3 from "Assets/review/3.jpg";
 import Client4 from "Assets/review/4.jpg";
 import Client5 from "Assets/review/5.jpg";
