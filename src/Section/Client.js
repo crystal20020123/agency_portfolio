@@ -21,4 +21,5 @@ const Client = () => {
     </Box>
   );
 };
+
 export default Client;

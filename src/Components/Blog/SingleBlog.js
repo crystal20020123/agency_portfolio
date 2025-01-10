@@ -102,4 +102,5 @@ const SingleBlog = () => {
     </Box>
   );
 };
+
 export default SingleBlog;

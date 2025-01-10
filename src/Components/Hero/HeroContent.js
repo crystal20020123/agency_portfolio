@@ -30,4 +30,5 @@ const HeroContent = () => {
     </Box>
   );
 };
+
 export default HeroContent;

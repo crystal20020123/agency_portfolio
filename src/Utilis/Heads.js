@@ -3,26 +3,28 @@ import Head from "next/head";
 const Heads = () => {
   return (
     <Head>
-      <meta property="og:url" content="https://codestation21.com" />
+      <meta
+        property="og:url"
+        content="https://fusion-softworks-agency.vercel.app/"
+      />
       <meta property="og:type" content="website" />
       <meta
         property="og:title"
-        content="Fusion Softworks | Web and Mobile application developing agency"
+        content="Fusion Softworks | Software development agency"
       />
       <meta
         property="og:description"
-        content="We are web and mobile application developing agency . We use technology like React.js, Next.js, Express.js, Node.js, Restful API, GraphQL, MongoDB, Typrescript, Flutter and almost all javascript framework and libraray. We can solve design and develop applications fully coustomize for you. We provide complete digital space solutions for you."
+        content="We are a software agency focused on AI, Blockchain, Web, Mobile App development."
       />
-      <title>
-        Fusion Softworks | Web and Mobile application developing agency
-      </title>
+      <title>Fusion Softworks | Software development agency</title>
       <meta
         name="description"
-        content="We are web and mobile application developing agency . We use technology like React.js, Next.js, Express.js, Node.js, Restful API, GraphQL, MongoDB, Typrescript, Flutter and almost all javascript framework and libraray. We can solve design and develop applications fully coustomize for you. We provide complete digital space solutions for you."
+        content="We are a software agency focused on AI, blockchain, web and mobile app development. We build products using cutting edge technologies. Always friendly and provide excellent service."
       />
       <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="author" content="Siam Ahnaf" />
     </Head>
   );
 };
+
 export default Heads;

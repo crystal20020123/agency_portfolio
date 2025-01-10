@@ -1,5 +1,4 @@
 import { CustomTag, TagText } from "@asphalt-react/tag";
-import { useRouter } from "next/router";
 import * as React from "react";
 import {
   Button,
@@ -15,7 +14,6 @@ import ReadDialog from "./dialog";
 import Link from "next/link";
 
 const Template = ({ work }) => {
-  const router = useRouter();
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {

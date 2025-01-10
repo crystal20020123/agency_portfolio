@@ -20,4 +20,5 @@ const Work = ({ works }) => {
     </Grid>
   );
 };
+
 export default Work;
