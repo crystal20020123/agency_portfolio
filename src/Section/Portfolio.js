@@ -108,7 +108,6 @@ const Portfolio = () => {
             </TabPanel>
           ))}
         </TabContext>
-        {/* <Box component="img" src={Particle} alt="particle" sx={styles.Particle} /> */}
       </Container>
     </div>
   );

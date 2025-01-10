@@ -23,7 +23,7 @@ const Logo = () => {
         <Box
           sx={{
             display: {
-              sm: "none",
+              xxs: "none",
               md: "block",
             },
           }}

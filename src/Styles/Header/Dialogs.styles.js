@@ -1,4 +1,9 @@
 const styles = {
+  Location: {
+    display: "flex",
+    alignItems: "start",
+    gap: "10px",
+  },
   CrossButton: {
     backgroundColor: "primary.main",
     p: {

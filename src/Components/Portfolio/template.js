@@ -12,6 +12,7 @@ import {
   Box,
 } from "@mui/material";
 import ReadDialog from "./dialog";
+import Link from "next/link";
 
 const Template = ({ work }) => {
   const router = useRouter();
@@ -78,17 +79,20 @@ const Template = ({ work }) => {
                 </CustomTag>
               ))}
           </Box>
-          <Button
-            sx={{
-              color: "white",
-              borderColor: "white",
-              borderRadius: 2,
-            }}
-            variant="outlined"
-            onClick={() => router.push(work.url)}
-          >
-            Visit
-          </Button>
+          <Link href={work.url} passHref>
+            <a target="blank">
+              <Button
+                sx={{
+                  color: "white",
+                  borderColor: "white",
+                  borderRadius: 2,
+                }}
+                variant="outlined"
+              >
+                Visit
+              </Button>
+            </a>
+          </Link>
         </CardActions>
       </Card>
       <ReadDialog open={open} setOpen={setOpen} />

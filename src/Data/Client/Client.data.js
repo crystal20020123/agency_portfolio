@@ -7,7 +7,7 @@ import Client5 from "Assets/review/5.jpg";
 const clientData = [
   {
     title: "Quality Service",
-    name: "Philippe",
+    name: "Philippe Raunet, CEO at Bookandlink",
     star: 5,
     review:
       "They Provide great quality service and their behavior is so much helpful.",

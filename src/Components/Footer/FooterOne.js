@@ -22,13 +22,13 @@ const FooterOne = () => {
         </Box>
         <Box>
           <Typography variant="body1" component="p">
-            171/5, Borhanpur Lane, 6 Hazaribagh Road, Dhaka 1211
+            Guatemala city, Guatemala
           </Typography>
         </Box>
       </Stack>
       <Stack direction="row" sx={styles.Address}>
         <Box>
-          <Link href="mailto:fusionsoftworks@gmail.com">
+          <Link href="mailto:fusion.softworks.gt@gmail.com">
             <a>
               <EmailIcon style={{ fontSize: "36px" }} />
             </a>

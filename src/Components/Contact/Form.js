@@ -21,9 +21,9 @@ import CloseIcon from "@mui/icons-material/Close";
 //Styles
 import styles from "Styles/Contact/Form.styles";
 
-const public_key = "C40325bKcofwtsQBg";
-const service_id = "service_8t08gwl";
-const template_id = "template_4640nyd";
+const public_key = "R1JNhIXRz1z_aGIq7";
+const service_id = "service_gtkyj2r";
+const template_id = "template_q6zuidb";
 
 const Form = () => {
   const [loading, setLoading] = useState(false);
