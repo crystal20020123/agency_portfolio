@@ -93,7 +93,12 @@ const Template = ({ work }) => {
           </Link>
         </CardActions>
       </Card>
-      <ReadDialog open={open} setOpen={setOpen} />
+      <ReadDialog
+        open={open}
+        setOpen={setOpen}
+        title={work.title}
+        count={work.count}
+      />
     </div>
   );
 };

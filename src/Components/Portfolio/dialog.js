@@ -4,7 +4,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Detail from "./detail";
 import CloseRoundedIcon from "@mui/icons-material/Cancel";
 
-export default function ReadDialog({ open, setOpen }) {
+export default function ReadDialog({ open, setOpen, title, count }) {
   const handleClose = () => {
     setOpen(false);
   };
@@ -32,7 +32,7 @@ export default function ReadDialog({ open, setOpen }) {
           </div>
         </DialogTitle>
         <DialogContent>
-          <Detail />
+          <Detail title={title} count={count} />
         </DialogContent>
       </Dialog>
     </>

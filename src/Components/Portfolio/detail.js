@@ -1,14 +1,27 @@
+import Image from "next/image";
 import Carousel from "react-material-ui-carousel";
-import DetailImage from "Assets/portfolio/alison.png";
-import DetailImage2 from "Assets/portfolio/vocalo.png";
-import { Box } from "@mui/material";
 
-const Detail = () => {
+const Detail = ({ title, count }) => {
+  let images = [];
+
+  for (let i = 0; i < count; i++) {
+    images.push(i);
+  }
+
   return (
     <>
       <Carousel>
-        <Box component="img" src={DetailImage} height="500px" />
-        <Box component="img" src={DetailImage2} height="500px" />
+        {images &&
+          images.map((image, idx) => (
+            <Image
+              key={idx}
+              src={`/portfolio/${title}/${idx + 1}.jpg`}
+              alt={image}
+              width="1000px"
+              height="500px"
+              objectFit={title === "lummi" ? "scale-down" : "unset"}
+            />
+          ))}
       </Carousel>
     </>
   );
