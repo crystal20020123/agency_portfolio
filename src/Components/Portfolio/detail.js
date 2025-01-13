@@ -38,12 +38,6 @@ const Detail = ({ title, count }) => {
               alt={image}
               width={1000}
               height={500}
-              style={{
-                width: "100%",
-                height: "auto",
-                maxHeight: "500px",
-                objectFit: title === "lummi" ? "scale-down" : "contain",
-              }}
             />
           ))}
       </Carousel>
