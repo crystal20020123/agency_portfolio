@@ -98,6 +98,7 @@ const Template = ({ work }) => {
         setOpen={setOpen}
         title={work.title}
         count={work.count}
+        url={work.url}
       />
     </div>
   );

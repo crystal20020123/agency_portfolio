@@ -10,16 +10,40 @@ const Detail = ({ title, count }) => {
 
   return (
     <>
-      <Carousel>
+      <Carousel
+        sx={{
+          minHeight: "500px",
+        }}
+        navButtonsAlwaysVisible={true}
+        navButtonsProps={{
+          style: {
+            opacity: 1, // Make buttons fully visible
+            backgroundColor: "rgba(0,0,0,0.3)",
+            transform: "none", // Prevent any transform animations
+          },
+        }}
+        navButtonsWrapperProps={{
+          // Add wrapper props
+          style: {
+            opacity: 1, // Make wrapper fully visible
+            transform: "none", // Prevent any transform animations
+          },
+        }}
+      >
         {images &&
           images.map((image, idx) => (
             <Image
               key={idx}
               src={`/portfolio/${title}/${idx + 1}.jpg`}
               alt={image}
-              width="1000px"
-              height="500px"
-              objectFit={title === "lummi" ? "scale-down" : "unset"}
+              width={1000}
+              height={500}
+              style={{
+                width: "100%",
+                height: "auto",
+                maxHeight: "500px",
+                objectFit: title === "lummi" ? "scale-down" : "contain",
+              }}
             />
           ))}
       </Carousel>
