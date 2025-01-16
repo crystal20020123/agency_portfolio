@@ -21,8 +21,8 @@ const Heads = () => {
         name="description"
         content="We are a software agency focused on AI, blockchain, web and mobile app development. We build products using cutting edge technologies. Always friendly and provide excellent service."
       />
-      <link rel="shortcut icon" href="/favicon.ico" />
-      <meta name="author" content="Siam Ahnaf" />
+      <link rel="shortcut icon" href="/logo.png" />
+      <meta name="author" content="software" />
     </Head>
   );
 };
